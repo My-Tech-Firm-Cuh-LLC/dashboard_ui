@@ -1,0 +1,16 @@
+// All badges, blips, and dips and their related modifiers
+
+@import "variables"
+
+.badge--status
+    &::before
+        content: " "
+        display: inline-block
+        border-radius: 100%
+        margin-right: 5px
+        width: 10px
+        height: 10px
+
+.badge--status-live
+    &::before
+        background-color: $green
