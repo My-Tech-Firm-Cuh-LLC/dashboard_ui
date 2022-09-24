@@ -2,6 +2,15 @@
 
 @import "variables"
 
+.badge--id
+  font-size: 0.66em
+  font-family: monospace
+  letter-spacing: 0.1em
+  opacity: 0.7
+  font-weight: 200
+  font-style: italic
+  margin-left: 2px
+
 .badge--status
     &::before
         content: " "
@@ -10,6 +19,10 @@
         margin-right: 5px
         width: 10px
         height: 10px
+
+.badge--status-inactive
+    &::before
+        background-color: $colors--status-inactive
 
 .badge--status-live
     &::before

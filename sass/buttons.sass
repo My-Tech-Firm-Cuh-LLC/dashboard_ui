@@ -1,11 +1,46 @@
 // Buttons and related modifiers
 
+@import "variables"
+@import "cards"
+
 .btns--nav
-    text-decoration: none
-    color: $colors--light
-    background-color: $colors--card-bg
-    border-radius: 20px
-    padding: 5px 15px
-    font-size: .8em
-    border: 1px solid $colors--border
-    font-weight: bolder
+  color: $colors--light
+  background-color: $colors--card-bg
+  border-radius: 20px
+  padding: 5px 15px
+  font-size: .8em
+  border: 1px solid $colors--border
+  font-weight: bolder
+  transition: $trans-btn
+  &:hover
+    background-color: lighten($colors--card-bg, 3%)
+
+.btns--generic
+  background-color: $colors--accent
+  padding: 2px 5px
+  color: $colors--dark
+  font-weight: bold
+  font-size: 0.75em
+
+.btns--plus-one-card
+  @extend .cards--base
+  display: flex
+  margin: ($margin--sibling / 2) auto
+  padding: 8px 0
+  font-size: .6em
+  font-weight: bolder
+  justify-content: center
+  align-content: center
+  text-align: center
+  &::before
+    content: "+"
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 1em
+    width: 12px
+    height: 12px
+    border-radius: 100%
+    color: $colors--primary
+    margin-right: 5px
+    background-color: $colors--light

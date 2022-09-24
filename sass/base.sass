@@ -2,15 +2,26 @@
 
 @import "variables"
 
+.base--body
+  background-color: $colors--primary
+
 .base--top-header
-    display: block
-    padding: 0
-    margin: 0 auto -10px
-    color: $colors--light
-    font-variant: all-small-caps
-    font-size: 1em
-    background-color: rgba($colors--card-bg, 0.7)
-    width: max-content
-    padding: 4px 20px
-    border-radius: 0 0 10px 10px
-    font-weight: bolder
+  display: block
+  padding: 0
+  margin: 0 auto -10px
+  color: $colors--light
+  font-variant: all-small-caps
+  font-size: 1em
+  background-color: rgba($colors--card-bg, 0.7)
+  width: max-content
+  padding: 4px 20px
+  border-radius: 0 0 10px 10px
+  font-weight: bolder
+
+.base--footer
+  background-color: darken($colors--primary, 5%)
+  color: $colors--light
+  font-size: 0.75em
+  font-weight: 300
+  padding: 15px
+  margin: 60px 0 0 0
