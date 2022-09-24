@@ -13,7 +13,7 @@
   font-weight: bolder
   transition: $trans-btn
   &:hover
-    background-color: lighten($colors--card-bg, 3%)
+    background-color: lighten($colors--card-bg, 5%)
 
 .btns--generic
   background-color: $colors--accent
@@ -21,6 +21,9 @@
   color: $colors--dark
   font-weight: bold
   font-size: 0.75em
+  &:hover
+    color: lighten($colors--dark, 15%)
+    background-color: lighten($colors--accent, 5%)
 
 .btns--plus-one-card
   @extend .cards--base
