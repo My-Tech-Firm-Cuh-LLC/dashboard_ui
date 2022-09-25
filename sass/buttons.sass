@@ -31,7 +31,7 @@
   display: flex
   margin: ($margin--sibling / 2) auto
   padding: 8px 0
-  font-size: .6em
+  font-size: .75em
   font-weight: bolder
   justify-content: center
   align-content: center
@@ -39,15 +39,18 @@
   transition: $trans-btn
   &:hover
     background-color: lighten($colors--card-bg, 10%)
+    text-decoration: none
+    &::before
+      background-color: $colors--accent
+      color: $colors--dark
   &::before
     content: "+"
     display: flex
     justify-content: center
     align-items: center
-    font-size: 1em
-    width: 12px
-    height: 12px
-    border-radius: 100%
+    border-radius: 6px
     color: $colors--primary
     margin-right: 5px
-    background-color: $colors--light
+    padding: 0 8px
+    transform: scale(66%)
+    background-color: rgba($colors--light, 0.6)
