@@ -26,10 +26,27 @@
     color: lighten($colors--dark, 15%)
     background-color: lighten($colors--accent, 10%)
 
+.btns--form
+  @extend .btns--generic
+  width: 33%
+  display: block
+  margin: $margin--sibling auto 0
+  text-align: center
+  padding: 5px 0
+  font-variant: all-small-caps
+  font-size: 1em
+  border-radius: 50px
+  color: $colors--card-bg
+
+.btns--modal
+  @extend .btns--form
+  margin-top: calc($margin--sibling * 2)
+  width: 50%
+
 .btns--plus-one-card
   @extend .cards--base
   display: flex
-  margin: ($margin--sibling / 2) auto
+  margin: calc($margin--sibling / 2) auto
   padding: 8px 0
   font-size: .75em
   font-weight: bolder

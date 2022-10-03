@@ -5,7 +5,7 @@
 // Headers
 .util--header-category
   color: $colors--light
-  margin: $margin--sibling auto ($margin--sibling / 2)
+  margin: $margin--sibling auto calc($margin--sibling / 2)
 
 // Justify a group of elements to have the most space in
 // between them horizontally
@@ -13,3 +13,10 @@
   display: flex
   justify-content: space-between
   flex-direction: row
+
+.util--dark-overlay
+  width: 100vw
+  height: 100vh
+  background-color: $colors--dark
+  position: absolute
+  opacity: 0.66

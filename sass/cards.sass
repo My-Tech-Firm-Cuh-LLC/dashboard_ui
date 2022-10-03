@@ -2,12 +2,90 @@
 
 @import "variables"
 
+.cards--icon-header
+  display: flex
+  align-items: center
+  margin: 0 0 calc($margin--sibling / 2) 0
+  h2
+    font-size: 1.15em
+  svg, img
+    margin-right: 10px
+
 .cards--base
   background-color: $colors--card-bg
   color: $colors--light
-  padding: 15px
-  border: 1px solid $colors--border
+  padding: $margin--sibling
+  margin: $margin--sibling auto
+  box-shadow: 0 0 5px 2px rgba($colors--dark, 0.1)
+  max-width: 650px
+
+.cards--icon-greeter
+  @extend .cards--base
+  border-radius: 130px 130px 0 0
+  text-align: center
+  padding: $margin--sibling
+  border-bottom: 10px solid $colors--accent2 !important
+  h1
+    margin: calc($margin--sibling / 2)
+  p
+    font-size: .88em
+    color: rgba($colors--light,.66)
+    text-align: center
+  svg, img
+    display: block
+    height: max-content
+    margin: auto
+
+.cards--modal
+  @extend .cards--base
+  padding: calc($margin--sibling * 2)
+  position: absolute
+  margin: 0
+  top: 50%
+  left: 50%
+  box-sizing: border-box
+  z-index: 999999999
+  width: 75%
+  max-width: 500px
+  transform: translate(-50%,-50%)
+  h2 // modal title
+    font-size: 0.9em
+    font-weight: lighter
+    font-variant: all-small-caps
+  & > span // close button
+    position: absolute
+    top: 5px
+    right: 15px
+    filter: brightness(75%)
+    width: 10px
+    height: 10px
+    &:hover
+      cursor: pointer
+      filter: brightness(110%)
+    &::before
+      content: "✕"
+
+.cards--modal-data-display
   margin: $margin--sibling 0
+  border: 1px solid rgba($colors--light, 0.66)
+  background-color: rgba(0,0,0,0.15)
+  padding: $margin--sibling
+  max-height: 250px
+  overflow-y: scroll
+  div
+    p
+      font-size: 0.8em
+      line-height: 1.25em
+      color: rgba($colors--light, 0.66)
+      font-weight: lighter
+      & > span
+        font-weight: lighter
+        padding-left: $margin--sibling
+        color: $colors--light
+      h3, p
+        margin-bottom: calc($margin--sibling / 4)
+      p:last-of-type
+        margin-bottom: $margin--sibling
 
 .cards--greeter
   @extend .cards--base
@@ -19,3 +97,9 @@
     opacity: 0.75
     font-weight: 300
     font-style: italic
+
+@media only screen and (min-width: $mediasize1)
+  .cards--base
+    padding: calc($margin--sibling * 2)
+
+// @media only screen and (min-width: $mediasize2)
