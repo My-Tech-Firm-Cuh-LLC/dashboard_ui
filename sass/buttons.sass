@@ -17,6 +17,7 @@
 
 .btns--generic
   background-color: $colors--accent
+  border: 1px solid $colors--accent
   padding: 2px 5px
   color: $colors--dark
   font-weight: bold
@@ -32,11 +33,13 @@
   display: block
   margin: $margin--sibling auto 0
   text-align: center
-  padding: 5px 0
+  padding: ($margin--sibling / 2) 0
   font-variant: all-small-caps
   font-size: 1em
   border-radius: 50px
-  color: $colors--card-bg
+  &:hover
+    width: 66%
+    border: 1px solid darken($colors--accent, 15%)
 
 .btns--modal
   @extend .btns--form

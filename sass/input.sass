@@ -3,10 +3,20 @@
 @import "variables"
 
 .input--base
-    width: 100%
-    margin: $margin--sibling auto 0
-    padding: 5px 10px
-    background-color: rgba($colors--light,.10 )
-    border: 1px solid rgba($colors--light,.33 )
-    &::placeholder
-        color: $colors--light
+  width: 100%
+  margin: $margin--sibling auto 0
+  padding: 5px 10px
+  background-color: rgba($colors--accent2,.15 )
+  border: 1px solid rgba($colors--accent2,.88)
+  color: $colors--dark
+  transition: $trans-btn
+  &::placeholder
+    color: darken(rgba($colors--accent2,1), 28%)
+  &:hover
+    background-color: lighten(rgba($colors--accent2,.15 ), 25%)
+    border: 1px solid darken(rgba($colors--accent2,1), 20%)
+  &:focus
+    background-color: lighten(rgba($colors--accent2,.35 ), 45%)
+    border: 1px solid $colors--dark
+    box-shadow: none
+    outline: 0 none
