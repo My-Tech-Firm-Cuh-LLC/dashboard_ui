@@ -12,18 +12,18 @@
   margin-left: 2px
 
 .badge--status
-    &::before
-        content: " "
-        display: inline-block
-        border-radius: 100%
-        margin-right: 5px
-        width: 10px
-        height: 10px
+  &::after
+    content: " "
+    display: inline-block
+    border-radius: 100%
+    margin-left: 5px
+    width: 10px
+    height: 10px
 
 .badge--status-inactive
-    &::before
-        background-color: $colors--status-inactive
+  &::after
+    background-color: $colors--status-inactive
 
 .badge--status-live
-    &::before
-        background-color: $colors--status-live
+  &::after
+    background-color: $colors--status-live
