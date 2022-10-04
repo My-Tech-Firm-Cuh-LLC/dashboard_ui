@@ -15,8 +15,12 @@
   flex-direction: row
 
 .util--dark-overlay
-  width: 100vw
+  width: 100%
   height: 100vh
   background-color: $colors--dark
-  position: absolute
+  position: fixed
   opacity: 0.66
+
+.util--hide-overlay
+  opacity: 0
+  pointer-events: none
