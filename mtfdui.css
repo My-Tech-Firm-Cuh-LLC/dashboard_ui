@@ -81,7 +81,7 @@ html:focus-within {
 }
 
 .util--header-category {
-  color: #f9f5ff;
+  color: #ffffff;
   margin: 15px auto 7.5px;
 }
 
@@ -121,7 +121,7 @@ html:focus-within {
   display: block;
   padding: 0;
   margin: 0 auto 15px auto;
-  color: #f9f5ff;
+  color: #ffffff;
   font-variant: all-small-caps;
   font-size: 1em;
   background-color: #85bb65;
@@ -133,7 +133,7 @@ html:focus-within {
 }
 
 .base--notification {
-  background-color: #f9f5ff;
+  background-color: #ffffff;
   color: #322e39;
   font-size: 0.75em;
   margin: 15px auto;
@@ -148,7 +148,7 @@ html:focus-within {
 
 .base--footer {
   background-color: #0b4069;
-  color: #f9f5ff;
+  color: #ffffff;
   font-size: 0.75em;
   font-weight: 300;
   padding: 5%;
@@ -432,10 +432,13 @@ html:focus-within {
   font-variant: all-small-caps;
   font-size: 1em;
   border-radius: 50px;
+  color: #ffffff;
+  cursor: pointer;
 }
 .btns--form:hover, .btns--modal:hover {
   width: 66%;
   border: 1px solid #e89d00;
+  color: #ffffff;
 }
 
 .btns--modal {
@@ -472,7 +475,7 @@ html:focus-within {
   margin-right: 5px;
   padding: 0 8px;
   transform: scale(66%);
-  background-color: rgba(249, 245, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .input--base {
@@ -513,7 +516,7 @@ html:focus-within {
   cursor: pointer;
 }
 .input--pill-btn:hover {
-  background-color: #f9f5ff;
+  background-color: #ffffff;
   border: 1px solid #548139;
 }
 
@@ -574,7 +577,7 @@ html:focus-within {
   transform: translate(-50%, -50%) scale(1.5);
   left: 50%;
   top: 40%;
-  color: #f9f5ff;
+  color: #ffffff;
   z-index: 1000;
   text-align: center;
   background-color: #85bb65;
