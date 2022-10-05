@@ -30,8 +30,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+ul[role=list],
+ol[role=list] {
   list-style: none;
 }
 
@@ -92,21 +92,29 @@ html:focus-within {
 }
 
 .util--dark-overlay {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background-color: #0f0f0f;
-  position: absolute;
+  background-color: #322e39;
+  position: fixed;
   opacity: 0.66;
 }
 
+.util--hide-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .base--body {
-  background-color: #117aca;
+  background-color: #0e4e80;
   width: 100%;
   font-family: sans-serif;
+  color: #322e39;
 }
 
 .base--page-content {
   padding: 0 15px;
+  max-width: 650px;
+  margin: auto;
 }
 
 .base--top-header {
@@ -126,7 +134,7 @@ html:focus-within {
 
 .base--notification {
   background-color: #f9f5ff;
-  color: #0f0f0f;
+  color: #322e39;
   font-size: 0.75em;
   margin: 15px auto;
   padding: 8px;
@@ -134,13 +142,12 @@ html:focus-within {
   display: flex;
   align-items: center;
 }
-.base--notification img,
-.base--notification svg {
+.base--notification img, .base--notification svg {
   margin-right: 0.5em;
 }
 
 .base--footer {
-  background-color: #0f6cb2;
+  background-color: #0b4069;
   color: #f9f5ff;
   font-size: 0.75em;
   font-weight: 300;
@@ -156,48 +163,45 @@ html:focus-within {
 .cards--icon-header h2 {
   font-size: 1.15em;
 }
-.cards--icon-header svg,
-.cards--icon-header img {
+.cards--icon-header svg, .cards--icon-header img {
   margin-right: 10px;
+  fill: #85bb65;
 }
 
-.cards--base,
-.btns--plus-one-card,
-.cards--greeter,
-.cards--modal,
-.cards--icon-greeter {
-  background-color: #14578a;
-  color: #f9f5ff;
+.cards--base, .btns--plus-one-card, .cards--modal, .cards--greeter, .cards--icon-greeter {
+  background-color: #f2f9ff;
   padding: 15px;
   margin: 15px auto;
-  box-shadow: 0 0 5px 2px rgba(15, 15, 15, 0.1);
-  max-width: 650px;
+  box-shadow: 0 0 5px 2px rgba(50, 46, 57, 0.1);
+  border-radius: 4px;
 }
 
-.cards--icon-greeter {
+.cards--greeter, .cards--icon-greeter {
+  margin: 15px auto 30px;
   border-radius: 130px 130px 0 0;
   text-align: center;
-  padding: 15px;
+  padding: 15px 60px;
   border-bottom: 10px solid #85bb65 !important;
 }
-.cards--icon-greeter h1 {
+.cards--greeter h1, .cards--icon-greeter h1 {
   margin: 7.5px;
+  font-size: 1.5em;
 }
-.cards--icon-greeter p {
+.cards--greeter p, .cards--icon-greeter p {
   font-size: 0.88em;
-  color: rgba(249, 245, 255, 0.66);
   text-align: center;
 }
-.cards--icon-greeter svg,
-.cards--icon-greeter img {
+
+.cards--icon-greeter svg, .cards--icon-greeter img {
   display: block;
   height: max-content;
   margin: auto;
+  fill: #322e39;
 }
 
 .cards--modal {
-  padding: 30px;
-  position: absolute;
+  padding: 15px;
+  position: fixed;
   margin: 0;
   top: 50%;
   left: 50%;
@@ -230,8 +234,9 @@ html:focus-within {
 
 .cards--modal-data-display {
   margin: 15px 0;
-  border: 1px solid rgba(249, 245, 255, 0.66);
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(133, 187, 101, 0.15);
+  border: 1px solid rgba(133, 187, 101, 0.88);
+  color: #322e39;
   padding: 15px;
   max-height: 250px;
   overflow-y: scroll;
@@ -239,43 +244,20 @@ html:focus-within {
 .cards--modal-data-display div p {
   font-size: 0.8em;
   line-height: 1.25em;
-  color: rgba(249, 245, 255, 0.66);
-  font-weight: lighter;
+  font-weight: bolder;
 }
 .cards--modal-data-display div p > span {
   font-weight: lighter;
   padding-left: 15px;
-  color: #f9f5ff;
+  color: #41652c;
 }
-.cards--modal-data-display div p h3,
-.cards--modal-data-display div p p {
-  margin-bottom: 3.75px;
+.cards--modal-data-display div p h3, .cards--modal-data-display div p p {
+  margin-bottom: 7.5px;
 }
 .cards--modal-data-display div p p:last-of-type {
   margin-bottom: 15px;
 }
 
-.cards--greeter {
-  padding: 10px 15px;
-  border-left: 7px solid #ffbe35;
-}
-.cards--greeter span {
-  font-variant: all-small-caps;
-  font-size: 0.6em;
-  opacity: 0.75;
-  font-weight: 300;
-  font-style: italic;
-}
-
-@media only screen and (min-width: 500px) {
-  .cards--base,
-  .btns--plus-one-card,
-  .cards--icon-greeter,
-  .cards--modal,
-  .cards--greeter {
-    padding: 30px;
-  }
-}
 .badge--id {
   font-size: 0.66em;
   font-family: monospace;
@@ -286,20 +268,20 @@ html:focus-within {
   margin-left: 2px;
 }
 
-.badge--status::before {
+.badge--status::after {
   content: " ";
   display: inline-block;
   border-radius: 100%;
-  margin-right: 5px;
+  margin-left: 5px;
   width: 10px;
   height: 10px;
 }
 
-.badge--status-inactive::before {
+.badge--status-inactive::after {
   background-color: #eeeeee;
 }
 
-.badge--status-live::before {
+.badge--status-live::after {
   background-color: #249048;
 }
 
@@ -311,48 +293,45 @@ html:focus-within {
 .cards--icon-header h2 {
   font-size: 1.15em;
 }
-.cards--icon-header svg,
-.cards--icon-header img {
+.cards--icon-header svg, .cards--icon-header img {
   margin-right: 10px;
+  fill: #85bb65;
 }
 
-.cards--base,
-.btns--plus-one-card,
-.cards--icon-greeter,
-.cards--modal,
-.cards--greeter {
-  background-color: #14578a;
-  color: #f9f5ff;
+.cards--base, .btns--plus-one-card, .cards--greeter, .cards--icon-greeter, .cards--modal {
+  background-color: #f2f9ff;
   padding: 15px;
   margin: 15px auto;
-  box-shadow: 0 0 5px 2px rgba(15, 15, 15, 0.1);
-  max-width: 650px;
+  box-shadow: 0 0 5px 2px rgba(50, 46, 57, 0.1);
+  border-radius: 4px;
 }
 
-.cards--icon-greeter {
+.cards--greeter, .cards--icon-greeter {
+  margin: 15px auto 30px;
   border-radius: 130px 130px 0 0;
   text-align: center;
-  padding: 15px;
+  padding: 15px 60px;
   border-bottom: 10px solid #85bb65 !important;
 }
-.cards--icon-greeter h1 {
+.cards--greeter h1, .cards--icon-greeter h1 {
   margin: 7.5px;
+  font-size: 1.5em;
 }
-.cards--icon-greeter p {
+.cards--greeter p, .cards--icon-greeter p {
   font-size: 0.88em;
-  color: rgba(249, 245, 255, 0.66);
   text-align: center;
 }
-.cards--icon-greeter svg,
-.cards--icon-greeter img {
+
+.cards--icon-greeter svg, .cards--icon-greeter img {
   display: block;
   height: max-content;
   margin: auto;
+  fill: #322e39;
 }
 
 .cards--modal {
-  padding: 30px;
-  position: absolute;
+  padding: 15px;
+  position: fixed;
   margin: 0;
   top: 50%;
   left: 50%;
@@ -385,8 +364,9 @@ html:focus-within {
 
 .cards--modal-data-display {
   margin: 15px 0;
-  border: 1px solid rgba(249, 245, 255, 0.66);
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(133, 187, 101, 0.15);
+  border: 1px solid rgba(133, 187, 101, 0.88);
+  color: #322e39;
   padding: 15px;
   max-height: 250px;
   overflow-y: scroll;
@@ -394,85 +374,68 @@ html:focus-within {
 .cards--modal-data-display div p {
   font-size: 0.8em;
   line-height: 1.25em;
-  color: rgba(249, 245, 255, 0.66);
-  font-weight: lighter;
+  font-weight: bolder;
 }
 .cards--modal-data-display div p > span {
   font-weight: lighter;
   padding-left: 15px;
-  color: #f9f5ff;
+  color: #41652c;
 }
-.cards--modal-data-display div p h3,
-.cards--modal-data-display div p p {
-  margin-bottom: 3.75px;
+.cards--modal-data-display div p h3, .cards--modal-data-display div p p {
+  margin-bottom: 7.5px;
 }
 .cards--modal-data-display div p p:last-of-type {
   margin-bottom: 15px;
 }
 
-.cards--greeter {
-  padding: 10px 15px;
-  border-left: 7px solid #ffbe35;
-}
-.cards--greeter span {
-  font-variant: all-small-caps;
-  font-size: 0.6em;
-  opacity: 0.75;
-  font-weight: 300;
-  font-style: italic;
+.btns--top-nav-wrapper {
+  width: 88%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-@media only screen and (min-width: 500px) {
-  .cards--base,
-  .btns--plus-one-card,
-  .cards--icon-greeter,
-  .cards--modal,
-  .cards--greeter {
-    padding: 30px;
-  }
-}
 .btns--nav {
-  color: #f9f5ff;
-  background-color: #14578a;
+  color: #322e39;
+  background-color: #f2f9ff;
   border-radius: 20px;
   padding: 5px 15px;
   font-size: 0.8em;
-  border: 1px solid rgba(249, 245, 255, 0.33);
+  border: 1px solid rgba(50, 46, 57, 0.33);
   font-weight: bolder;
   transition: 150ms ease-out;
 }
 .btns--nav:hover {
-  background-color: #1b73b6;
+  background-color: white;
 }
 
-.btns--generic,
-.btns--form,
-.btns--modal {
+.btns--generic, .btns--form, .btns--modal {
   background-color: #ffbe35;
+  border: 1px solid #ffbe35;
   padding: 2px 5px;
-  color: #0f0f0f;
+  color: #f2f9ff;
   font-weight: bold;
   font-size: 0.75em;
   transition: 150ms ease-out;
 }
-.btns--generic:hover,
-.btns--form:hover,
-.btns--modal:hover {
-  color: #353535;
+.btns--generic:hover, .btns--form:hover, .btns--modal:hover {
+  color: #575063;
   background-color: #ffce68;
 }
 
-.btns--form,
-.btns--modal {
+.btns--form, .btns--modal {
   width: 33%;
   display: block;
   margin: 15px auto 0;
   text-align: center;
-  padding: 5px 0;
+  padding: 7.5px 0;
   font-variant: all-small-caps;
   font-size: 1em;
   border-radius: 50px;
-  color: #14578a;
+}
+.btns--form:hover, .btns--modal:hover {
+  width: 66%;
+  border: 1px solid #e89d00;
 }
 
 .btns--modal {
@@ -492,12 +455,12 @@ html:focus-within {
   transition: 150ms ease-out;
 }
 .btns--plus-one-card:hover {
-  background-color: #1b73b6;
+  background-color: white;
   text-decoration: none;
 }
 .btns--plus-one-card:hover::before {
   background-color: #ffbe35;
-  color: #0f0f0f;
+  color: #322e39;
 }
 .btns--plus-one-card::before {
   content: "+";
@@ -505,7 +468,7 @@ html:focus-within {
   justify-content: center;
   align-items: center;
   border-radius: 6px;
-  color: #117aca;
+  color: #0e4e80;
   margin-right: 5px;
   padding: 0 8px;
   transform: scale(66%);
@@ -514,13 +477,138 @@ html:focus-within {
 
 .input--base {
   width: 100%;
-  margin: 15px auto 0;
+  margin: 0 auto;
   padding: 5px 10px;
-  background-color: rgba(249, 245, 255, 0.1);
-  border: 1px solid rgba(249, 245, 255, 0.33);
+  background-color: rgba(133, 187, 101, 0.15);
+  border: 1px solid rgba(133, 187, 101, 0.88);
+  color: #322e39;
+  transition: 150ms ease-out;
 }
 .input--base::placeholder {
+  color: #41652c;
+}
+.input--base:hover {
+  background-color: rgba(203, 226, 189, 0.15);
+  border: 1px solid #548139;
+}
+.input--base:focus {
+  background-color: rgba(255, 255, 255, 0.35);
+  border: 1px solid #322e39;
+  box-shadow: none;
+  outline: 0 none;
+}
+.input--base, .input--base textarea {
+  resize: none;
+  outline: none;
+}
+
+.input--pill-btn {
+  text-align: center;
+  border-radius: 420px;
+  padding: 7.5px;
+  font-weight: 400;
+  border: 1px solid rgba(133, 187, 101, 0.88);
+  color: #322e39;
+  transition: 150ms ease-out;
+  cursor: pointer;
+}
+.input--pill-btn:hover {
+  background-color: #f9f5ff;
+  border: 1px solid #548139;
+}
+
+.input--two-btn {
+  display: flex;
+  justify-content: space-between;
+  margin: 3.75px 0;
+}
+.input--two-btn a {
+  width: 49%;
+  font-size: 0.75em;
+}
+
+.input--color-picker {
+  position: relative;
+  width: 100%;
+  height: 66px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 7.5px 0 0;
+}
+.input--color-picker input {
+  height: 120%;
+  width: 120%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.input--form label {
+  display: block;
+  margin: 7.5px 0 3.75px;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.input--form .input--file-upload {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(133, 187, 101, 0.88);
+  transition: 150ms ease-out;
+}
+.input--form .input--file-upload:hover {
+  filter: brightness(115%);
+  border: 1px solid #548139;
+}
+.input--form .input--file-upload:hover::after {
+  text-decoration: underline;
+}
+.input--form .input--file-upload:before {
+  content: "+";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(1.5);
+  left: 50%;
+  top: 40%;
   color: #f9f5ff;
+  z-index: 1000;
+  text-align: center;
+  background-color: #85bb65;
+  border-radius: 100%;
+  line-height: 125%;
+  pointer-events: none;
+}
+.input--form .input--file-upload::after {
+  content: "UPLOAD";
+  z-index: 1000;
+  position: absolute;
+  color: #322e39;
+  bottom: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  font-size: 0.75em;
+  font-weight: 700;
+  pointer-events: none;
+}
+.input--form input[type=submit] {
+  margin: 30px auto 0;
+  min-width: 33%;
+}
+.input--form input[type=file] {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(133, 187, 101, 0.15);
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+  font-size: 0;
 }
 
 /*# sourceMappingURL=mtfdui.css.map */

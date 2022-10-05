@@ -4,7 +4,7 @@
 
 .input--base
   width: 100%
-  margin: $margin--sibling auto 0
+  margin: 0 auto
   padding: 5px 10px
   background-color: rgba($colors--accent2,.15 )
   border: 1px solid rgba($colors--accent2,.88)
@@ -20,3 +20,102 @@
     border: 1px solid $colors--dark
     box-shadow: none
     outline: 0 none
+  &, textarea
+    resize: none
+    outline: none
+
+.input--pill-btn
+  text-align: center
+  border-radius: 420px
+  padding: ($margin--sibling / 2)
+  font-weight: 400
+  border: 1px solid rgba($colors--accent2,.88)
+  color: $colors--dark
+  transition: $trans-btn
+  cursor: pointer
+  &:hover
+    background-color: $colors--light
+    border: 1px solid darken(rgba($colors--accent2,1), 20%)
+
+.input--two-btn
+  display: flex
+  justify-content: space-between
+  margin: ($margin--sibling / 4) 0
+  a
+    width: 49%
+    font-size: 0.75em
+
+.input--color-picker
+  position: relative
+  width: 100%
+  height: 66px
+  overflow: hidden
+  border-radius: $card--border-radius
+  margin: ($margin--sibling / 2) 0 0
+  input
+    height: 120%
+    width: 120%
+    transform: translate(-50%, -50%)
+    position: absolute
+    left: 50%
+    top: 50%
+
+.input--form
+  label
+    display: block
+    margin: ($margin--sibling / 2) 0 ($margin--sibling / 4)
+    font-weight: 600
+    font-size: 0.9em
+  .input--file-upload
+    border-radius: 100%
+    width: 100px
+    height: 100px
+    position: relative
+    overflow: hidden
+    border: 1px solid rgba($colors--accent2,.88)
+    transition: $trans-btn
+    &:hover
+      filter: brightness(115%)
+      border: 1px solid darken(rgba($colors--accent2,1), 20%)
+      &::after
+        text-decoration: underline
+    &:before
+      content: "+"
+      width: 20px
+      height: 20px
+      position: absolute
+      transform: translate(-50%, -50%) scale(1.5)
+      left: 50%
+      top: 40%
+      color: $colors--light
+      z-index: 1000
+      text-align: center
+      background-color: $colors--accent2
+      border-radius: 100%
+      line-height: 125%
+      pointer-events: none
+    &::after
+      content: "UPLOAD"
+      z-index: 1000
+      position: absolute
+      color: $colors--dark
+      bottom: 22%
+      left: 50%
+      transform: translateX(-50%)
+      width: max-content
+      font-size: 0.75em
+      font-weight: 700
+      pointer-events: none
+  input[type="submit"]
+    margin: ($margin--sibling * 2) auto 0
+    min-width: 33%
+  input[type="file"]
+    position: absolute
+    width: 120%
+    height: 120%
+    transform: translate(-50%, -50%)
+    background-color: rgba($colors--accent2,.15 )
+    top: 50%
+    left: 50%
+    cursor: pointer
+    font-size: 0
