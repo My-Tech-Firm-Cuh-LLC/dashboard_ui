@@ -13,22 +13,43 @@
     fill: $colors--accent2
 
 .cards--base
+  position: relative
   background-color: $colors--card-bg
   padding: $margin--sibling
-  margin: $margin--sibling auto
+  margin: 0 auto $margin--sibling
   box-shadow: 0 0 5px 2px rgba($colors--dark, 0.1)
   border-radius: $card--border-radius
+  line-height: 1.5em
+  font-size: 0.75em
+
+.cards--digital-product
+  @extend .cards--base
+  display: flex
+  & > div:last-of-type
+    text-align: right
+    position: absolute
+    right: $margin--sibling
+    bottom: $margin--sibling
+    line-height: 1.1em
+    font-variant: all-small-caps
+    h4
+      font-size: 1.33em
+  h5
+    font-size: 1.33em
+    font-variant: all-small-caps
+    margin: 0 0 $margin--sibling
 
 .cards--greeter
   @extend .cards--base
-  margin: $margin--sibling auto ($margin--sibling * 2)
   border-radius: 130px 130px 0 0
   text-align: center
-  padding: $margin--sibling ($margin--sibling * 4)
+  padding: $margin--sibling ($margin--sibling * 3)
   border-bottom: 10px solid $colors--accent2 !important
+  font-weight: bolder
+  line-height: 1.5em
   h1
     margin: calc($margin--sibling / 2)
-    font-size: 1.5em
+    font-size: 1.33em
   p
     font-size: .88em
     text-align: center

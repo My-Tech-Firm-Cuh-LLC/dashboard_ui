@@ -1,31 +1,62 @@
 // Core UI elements that appear almost everywhere (headers, footers, copyrights)
 
 @import "variables"
+@import "utils"
 
 .base--body
   background-color: $colors--primary
   width: 100%
-  font-family: sans-serif
+  font-family: "Helvetica Neue", "Helvetica", sans-serif
   color: $colors--dark
+  display: block
 
 .base--page-content
   padding: 0 $margin--sibling
-  max-width: 650px
+  max-width: $base-max-content-width
   margin: auto
 
 .base--top-header
   display: block
+  overflow: hidden
+  text-align: center
+  width: 66px
   padding: 0
-  margin: 0 auto $margin--sibling auto
+  margin: 0 auto ($margin--sibling * 2) auto
   color: $colors--light
   font-variant: all-small-caps
   font-size: 1em
   background-color: $colors--accent2
-  width: max-content
   padding: 4px 20px
   border-radius: 0 0 10px 10px
   font-weight: 300
   letter-spacing: 0.1em
+
+.base--top-navigation
+  @extend .util--space-btwn
+  top: 15px
+  position: absolute
+  width: 100%
+  padding: 0 $margin--sibling
+  max-width: ($base-max-content-width - ($margin--sibling * 2))
+  left: 50%
+  transform: translateX(-50%)
+  font-variant: all-small-caps
+  a
+    color: rgba($colors--light, 0.66)
+    background-color: rgba($colors--light, 0)
+    border-radius: 20px
+    padding: 5px 15px
+    font-size: .8em
+    border: 1px solid rgba($colors--light, 0.33)
+    font-weight: bolder
+    transition: $trans-btn
+    width: 33%
+    text-align: center
+    max-width: 166px
+    &:hover
+      background-color: $colors--accent
+      color: $colors--dark
+      border: 1px solid $colors--accent
 
 .base--notification
   background-color: $colors--light

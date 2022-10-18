@@ -5,13 +5,18 @@
 // Headers
 .util--header-category
   color: $colors--light
-  margin: $margin--sibling auto calc($margin--sibling / 2)
+  margin: $margin--sibling auto ($margin--sibling / 2)
 
 // Justify a group of elements to have the most space in
 // between them horizontally
 .util--space-btwn
   display: flex
   justify-content: space-between
+  flex-direction: row
+
+.util--space-arnd
+  display: flex
+  justify-content: space-around
   flex-direction: row
 
 .util--dark-overlay

@@ -9,29 +9,19 @@
   display: flex
   justify-content: space-between
 
-.btns--nav
-  color: $colors--dark
-  background-color: $colors--card-bg
-  border-radius: 20px
-  padding: 5px 15px
-  font-size: .8em
-  border: 1px solid $colors--border
-  font-weight: bolder
-  transition: $trans-btn
-  &:hover
-    background-color: lighten($colors--card-bg, 10%)
-
 .btns--generic
   background-color: $colors--accent
   border: 1px solid $colors--accent
-  padding: 2px 5px
-  color: $colors--card-bg
+  padding: ($margin--sibling / 2) $margin--sibling
+  color: $colors--dark
   font-weight: bold
   font-size: 0.75em
   transition: $trans-btn
+  border-radius: $card--border-radius
   &:hover
     color: lighten($colors--dark, 15%)
-    background-color: lighten($colors--accent, 10%)
+    border: 1px solid $colors--dark
+    background-color: rgba($colors--accent, 0)
 
 .btns--form
   @extend .btns--generic
@@ -67,19 +57,20 @@
   text-align: center
   transition: $trans-btn
   &:hover
-    background-color: lighten($colors--card-bg, 10%)
+    background-color: $colors--accent
+    color: $colors--light
     text-decoration: none
     &::before
-      background-color: $colors--accent
-      color: $colors--dark
+      color: $colors--light
   &::before
     content: "+"
     display: flex
     justify-content: center
     align-items: center
     border-radius: 6px
-    color: $colors--primary
+    color: $colors--dark
     margin-right: 5px
-    padding: 0 8px
-    transform: scale(66%)
-    background-color: rgba($colors--light, 0.6)
+    padding: 0
+    height: 100%
+    transition: $trans-btn
+    line-height: 1.2em

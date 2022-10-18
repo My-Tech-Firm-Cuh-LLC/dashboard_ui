@@ -9,7 +9,7 @@
   opacity: 0.7
   font-weight: 200
   font-style: italic
-  margin-left: 2px
+  margin-left: ($margin--sibling / 2)
 
 .badge--status
   &::after
@@ -19,11 +19,14 @@
     margin-left: 5px
     width: 10px
     height: 10px
+    border: 1px solid rgba($colors--dark, 0.33)
 
 .badge--status-inactive
+  @extend .badge--status
   &::after
     background-color: $colors--status-inactive
 
 .badge--status-live
+  @extend .badge--status
   &::after
     background-color: $colors--status-live
