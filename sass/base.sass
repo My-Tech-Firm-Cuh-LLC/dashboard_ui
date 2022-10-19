@@ -6,6 +6,7 @@
 .base--body
   background-color: $colors--primary
   width: 100%
+  min-width: 275px
   font-family: "Helvetica Neue", "Helvetica", sans-serif
   color: $colors--dark
   display: block
@@ -21,12 +22,11 @@
   text-align: center
   width: 66px
   padding: 0
-  margin: 0 auto ($margin--sibling * 2) auto
+  margin: ($margin--sibling / 2) auto ($margin--sibling) auto
   color: $colors--light
   font-variant: all-small-caps
   font-size: 1em
-  background-color: $colors--accent2
-  padding: 4px 20px
+  background-color: rgba($colors--accent2, 0)
   border-radius: 0 0 10px 10px
   font-weight: 300
   letter-spacing: 0.1em
@@ -71,9 +71,51 @@
     margin-right: 0.5em
 
 .base--footer
-  background-color: darken($colors--primary, 5%)
+  background-color: darken($colors--primary, 10%)
   color: $colors--light
   font-size: 0.75em
   font-weight: 300
-  padding: 5%
+  padding: ($margin--sibling * 2)
   margin: 60px 0 0 0
+  svg#MTFCUH
+    height: 3em
+    width: 100%
+    margin: 0 auto ($margin--sibling * 2)
+    filter: grayscale(1) contrast(100)
+  ul
+    margin: 0 0 ($margin--sibling)
+    padding: 0
+    font-size: 1.15em
+    h3
+      margin: 0 0 ($margin--sibling / 2)
+      border-bottom: 1px solid rgba($colors--light, 0.33)
+    li
+      list-style: none
+      margin-bottom: ($margin--sibling / 2)
+      a
+        display: block
+        padding: ($margin--sibling / 4) $margin--sibling
+        width: 100%
+        transition: $trans-btn
+        border-radius: $card--border-radius
+        &:hover
+          background-color: rgba($colors--light, 0.15)
+  p.bottom-copyright-line
+    margin: ($margin--sibling * 2) auto 0
+    text-align: center
+    color: rgba($colors--light, 0.66)
+    font-size: 0.66em
+  .footer-links
+    max-width: 833px
+    margin: auto
+
+
+@media only screen and (min-width: $mediasize1)
+  .base--footer
+    .footer-links
+      display: flex
+      justify-content: space-between
+      ul
+        flex-grow: 0.25
+        h3
+          padding: ($margin--sibling / 2) 0

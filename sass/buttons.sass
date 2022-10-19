@@ -18,6 +18,9 @@
   font-size: 0.75em
   transition: $trans-btn
   border-radius: $card--border-radius
+  svg
+    height: 0.75em
+    transform: scale(1.66)
   &:hover
     color: lighten($colors--dark, 15%)
     border: 1px solid $colors--dark
@@ -47,6 +50,7 @@
 
 .btns--plus-one-card
   @extend .cards--base
+  border: 1px solid $colors--light
   display: flex
   margin: calc($margin--sibling / 2) auto
   padding: 8px 0
@@ -57,7 +61,8 @@
   text-align: center
   transition: $trans-btn
   &:hover
-    background-color: $colors--accent
+    background-color: rgba($colors--accent, 0)
+    border: 1px solid $colors--light
     color: $colors--light
     text-decoration: none
     &::before
