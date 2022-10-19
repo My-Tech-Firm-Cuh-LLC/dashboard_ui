@@ -21,6 +21,10 @@
   border-radius: $card--border-radius
   line-height: 1.5em
   font-size: 0.75em
+  .cards--title
+    font-size: 1.33em
+    margin: 0 0 $margin--sibling
+
 
 .cards--digital-product
   @extend .cards--base
@@ -48,18 +52,17 @@
   font-weight: bolder
   line-height: 1.5em
   font-size: 1.33em
-  h1
-    margin: calc($margin--sibling / 2)
+  h1,h3
+    margin: 0 auto
   p
-    font-size: .88em
+    margin-top: ($margin--sibling)
+    font-size: .66em
+    line-height: 1.33em
     text-align: center
-
-.cards--icon-greeter
-  @extend .cards--greeter
   svg, img
     display: block
-    height: max-content
-    margin: auto
+    height: 1.33em
+    margin: 0 auto ($margin--sibling / 2)
     fill: $colors--dark
 
 .cards--modal
