@@ -19,8 +19,8 @@
   margin: 0 auto $margin--sibling
   box-shadow: 0 0 5px 2px rgba($colors--dark, 0.1)
   border-radius: $card--border-radius
-  line-height: 1.5em
-  font-size: 0.75em
+  line-height: 1.33em
+  font-size: 0.66em
   .cards--title
     font-size: 1.33em
     margin: 0 0 $margin--sibling
@@ -50,13 +50,14 @@
   padding: $margin--sibling ($margin--sibling * 4)
   border-bottom: 10px solid $colors--accent2 !important
   font-weight: bolder
-  line-height: 1.5em
-  font-size: 1.33em
-  h1,h3
+  font-size: 1.8em
+  h1,h2,h3,h4
+    font-size: min(1em, 3.66vw)
+    line-height: min(1.66em, 5.66vw)
     margin: 0 auto
   p
-    margin-top: ($margin--sibling)
-    font-size: .66em
+    margin-top: ($margin--sibling / 2)
+    font-size: min(.45em, 3vw)
     line-height: 1.33em
     text-align: center
   svg, img
