@@ -2,16 +2,6 @@
 
 @import "variables"
 
-.cards--icon-header
-  display: flex
-  align-items: center
-  margin: 0 0 calc($margin--sibling / 2) 0
-  h2
-    font-size: 1.15em
-  svg, img
-    margin-right: 10px
-    fill: $colors--accent2
-
 .cards--base
   position: relative
   background-color: $colors--card-bg
@@ -20,10 +10,12 @@
   box-shadow: 0 0 5px 2px rgba($colors--dark, 0.1)
   border-radius: $card--border-radius
   line-height: 1.33em
-  font-size: 0.66em
+  font-size: 0.75em
   .cards--title
-    font-size: 1.33em
-    margin: 0 0 $margin--sibling
+    font-size: 1.99em
+    margin: 0 0 ($margin--sibling * 2)
+    &::before
+      transform: scale(0.75)
 
 
 .cards--digital-product
@@ -47,45 +39,57 @@
   @extend .cards--base
   border-radius: 130px 130px 0 0
   text-align: center
-  padding: $margin--sibling ($margin--sibling * 4)
+  padding: ($margin--sibling / 2) ($margin--sibling * 2)
   border-bottom: 10px solid $colors--accent2 !important
   font-weight: bolder
   font-size: 1.8em
   h1,h2,h3,h4
-    font-size: min(1em, 3.66vw)
+    font-size: min(0.66em, 3.99vw)
     line-height: min(1.66em, 5.66vw)
     margin: 0 auto
+    a
+      color: $colors--accent2
+      &:hover
+        color: darken($colors--accent2, 10%)
+        text-decoration: underline
   p
     margin-top: ($margin--sibling / 2)
-    font-size: min(.45em, 3vw)
+    font-size: min(.33em, 3vw)
     line-height: 1.33em
     text-align: center
+    font-style: italic
+    font-weight: 300
   svg, img
     display: block
-    height: 1.33em
+    height: 0.66em
     margin: 0 auto ($margin--sibling / 2)
-    fill: $colors--dark
+    fill: $colors--primary
 
 .cards--modal
   @extend .cards--base
   padding: $margin--sibling
   position: fixed
   margin: 0
-  top: 50%
+  top: 45%
   left: 50%
   box-sizing: border-box
   z-index: 999999999
-  width: 75%
+  width: 66%
   max-width: 500px
   transform: translate(-50%,-50%)
+  a
+    @extend .btns--generic
+    text-align: center
+    display: block
+    border: 1px solid $colors--border
   h2
-    font-size: 0.9em
-    font-weight: lighter
-    font-variant: all-small-caps
+    margin-top: $margin--sibling
+    font-size: 1em
+    font-weight: normal
   & > span // close button
     position: absolute
-    top: 5px
-    right: 15px
+    top: ($margin--sibling / 2)
+    right: ($margin--sibling / 2)
     filter: brightness(75%)
     width: 10px
     height: 10px
@@ -104,10 +108,15 @@
   max-height: 250px
   overflow-y: scroll
   div
+    .m-info-update
+      margin-top: ($margin--sibling / 2)
+      padding-left: ($margin--sibling / 2)
+      border-left: 1px solid $colors--accent2
     p
       font-size: 0.8em
-      line-height: 1.25em
+      line-height: 1.33em
       font-weight: bolder
+      margin: ($margin--sibling / 4) 0
       & > span
         font-weight: lighter
         padding-left: $margin--sibling

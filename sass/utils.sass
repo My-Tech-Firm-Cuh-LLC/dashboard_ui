@@ -6,6 +6,7 @@
 .util--header-category
   color: $colors--light
   margin: $margin--sibling auto ($margin--sibling / 2)
+  font-size: 1em
 
 // Justify a group of elements to have the most space in
 // between them horizontally
@@ -22,8 +23,10 @@
 .util--dark-overlay
   width: 100%
   height: 100vh
-  background-color: $colors--dark
+  background-color: black
   position: fixed
+  top: 0
+  z-index: 999
   opacity: 0.66
 
 .util--hide-overlay
