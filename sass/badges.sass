@@ -30,3 +30,13 @@
   @extend .badge--status
   &::after
     background-color: $colors--status-live
+
+.badge--status-down
+  @extend .badge--status
+  &::after
+    background-color: $colors--status-invalid
+
+.badge--status-checking
+  @extend .badge--status
+  &::after
+    background-color: $colors--status-checking
